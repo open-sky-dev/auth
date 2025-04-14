@@ -1,0 +1,45 @@
+{
+  "name": "sveltekit-auth",
+  "version": "0.2.0",
+  "description": "SvelteKit Auth",
+  "license": "MIT",
+  "keywords": ["svelte", "sveltekit", "auth", "authentication", "authorization", "accounts"],
+  "author": "notnotjake",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notnotjake/sveltekit-auth",
+    "directory": "packages/sveltekit-auth"
+  },
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "svelte-package",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "@sveltejs/kit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.3.12",
+    "@sveltejs/kit": "^2.22.2",
+    "@types/bun": "latest",
+    "svelte": "^5.0.0",
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "dist/index.d.ts"
+}
