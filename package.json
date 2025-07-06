@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-auth-monorepo",
+	"name": "@open-sky/workspace",
 	"private": true,
 	"workspaces": [
 		"packages/*"

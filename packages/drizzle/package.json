@@ -1,5 +1,5 @@
 {
-	"name": "@notnotjake/sveltekit-auth-drizzle",
+	"name": "@open-sky/auth-drizzle",
 	"version": "0.0.0",
 	"description": "SvelteKit Auth Drizzle Adapter",
 	"license": "MIT",
@@ -14,8 +14,8 @@
 	"author": "notnotjake",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/notnotjake/sveltekit-auth",
-		"directory": "packages/sveltekit-auth-drizzle"
+		"url": "https://github.com/open-sky-dev/auth",
+		"directory": "packages/drizzle"
 	},
 	"private": false,
 	"type": "module",
