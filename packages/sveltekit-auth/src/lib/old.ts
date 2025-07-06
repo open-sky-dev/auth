@@ -115,34 +115,34 @@ export function pageMetaLoad(metaTags: Metadata): Load {
 }
 
 /**
-	 * Helps to create a SvelteKit Load function that handles merging parent/server
-	 * data while you provide the core page logic in a callback.
-	 *
-	 * The wrapper automatically merges `parentData`, `serverData`, and your callback's
-	 * result. (Redirects/errors from server load functions automatically pass through).
-	 *
-	 * Your callback `loadFunction` receives `{ event, parentTags }` that it can use.
-	 * 
-	 * @param {LoadFunctionCallback} loadFunction Callback receiving `{ event, parentTags }`, returning page props object or `Response`.
-	 * @returns {import('@sveltejs/kit').Load} A SvelteKit `Load` function.
-	 * @example
-	 * ```typescript
-	 * export const load = MetaTags.advancedMetaLoad(async ({ event, parentTags }) => {
-	 *     const { slug } = event.params;
-	 *     const metaResult = MetaTags.parseMeta(parentTags, { title: `Post: ${slug}` });
-	 *     // Return custom props + meta result
-	 *     return { postSlug: slug, ...metaResult };
-	 * });
-	 * ```
-	 */
+ * Helps to create a SvelteKit Load function that handles merging parent/server
+ * data while you provide the core page logic in a callback.
+ *
+ * The wrapper automatically merges `parentData`, `serverData`, and your callback's
+ * result. (Redirects/errors from server load functions automatically pass through).
+ *
+ * Your callback `loadFunction` receives `{ event, parentTags }` that it can use.
+ *
+ * @param {LoadFunctionCallback} loadFunction Callback receiving `{ event, parentTags }`, returning page props object or `Response`.
+ * @returns {import('@sveltejs/kit').Load} A SvelteKit `Load` function.
+ * @example
+ * ```typescript
+ * export const load = MetaTags.advancedMetaLoad(async ({ event, parentTags }) => {
+ *     const { slug } = event.params;
+ *     const metaResult = MetaTags.parseMeta(parentTags, { title: `Post: ${slug}` });
+ *     // Return custom props + meta result
+ *     return { postSlug: slug, ...metaResult };
+ * });
+ * ```
+ */
 export function advancedMetaLoad(loadFunction: LoadFunctionCallback): Load {
 	return async (event: LoadEvent) => {
 		const parentData = await event.parent()
 		const parentTags = (parentData?.metaTags as ParentMetadata) || null
 		const serverData = event.data
-		
+
 		const pageCallbackData = await loadFunction({ event, parentTags })
-		
+
 		return {
 			...parentData, // Include inherited layout data
 			...serverData, // Include data returned from server load data if exists

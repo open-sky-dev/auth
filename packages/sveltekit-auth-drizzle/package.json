@@ -1,0 +1,46 @@
+{
+	"name": "@notnotjake/sveltekit-auth-drizzle",
+	"version": "0.0.0",
+	"description": "SvelteKit Auth Drizzle Adapter",
+	"license": "MIT",
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"auth",
+		"authentication",
+		"authorization",
+		"accounts"
+	],
+	"author": "notnotjake",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/notnotjake/sveltekit-auth",
+		"directory": "packages/sveltekit-auth-drizzle"
+	},
+	"private": false,
+	"type": "module",
+	"scripts": {
+		"build": "unbuild"
+	},
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"exports": {
+		".": "./dist/index.js",
+		"./schema": "./dist/schema/index.js"
+	},
+	"files": [
+		"dist"
+	],
+	"dependencies": {
+		"@notnotjake/sveltekit-auth": "workspace:*",
+		"drizzle-orm": "^0.44.2"
+	},
+	"peerDependencies": {
+		"drizzle-orm": "^0.44.2"
+	},
+	"devDependencies": {
+		"drizzle-orm": "^0.44.2",
+		"unbuild": "^3.5.0",
+		"typescript": "^5.8.3"
+	}
+}

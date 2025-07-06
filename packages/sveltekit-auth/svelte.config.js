@@ -1,8 +1,8 @@
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 export default {
-  preprocess: vitePreprocess(),
-  compilerOptions: {
-	// Any Svelte compiler options here
-  }
+	preprocess: vitePreprocess(),
+	compilerOptions: {
+		// Any Svelte compiler options here
+	}
 }
